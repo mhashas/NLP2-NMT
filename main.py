@@ -27,7 +27,7 @@ validation = [valid_en, valid_fr]
 test_en, test_fr, _, _ = helper.preprocess(TEST_EN_FILE, TEST_FR_FILE, dataset.bpe_e, dataset.bpe_f)
 test = [test_en, test_fr]
 
-hidden_sizes = [200]
+hidden_sizes = [100]
 for hidden_size in hidden_sizes:
     model = Model(hidden_size, dataset)
     losses, bleus = model.train(dataset, validation, test, LEARNING_RATE, EPOCHS, BATCH_SIZE, TF_RATIO, MAX_LENGTH)
